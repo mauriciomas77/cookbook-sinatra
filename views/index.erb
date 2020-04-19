@@ -1,0 +1,8 @@
+<h1> Recetario disponible </h1>
+<% @recipes.each_with_index do |recipe,index| %>
+  <li>
+    <% recipe.done ? done = "[OK]" : done = "[-----]" %>
+    <%= "#{done} #{recipe.name} (#{recipe.time})" %> <a href="/recipes/<%= index %>">Delete</a> <a href="/mark/<%= index %>">Mark as read</a>
+  </li>
+<% end %>
+<a href="/new">AGREGAR RECETA</a>
